@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-192.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="icon-192.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="2048 프리미엄">
+
+    <link rel="icon" type="image/png" href="icon-180.png">
+    <link rel="manifest" href="manifest.json">
+    
+    <title>2048 Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1 class="title">2048</h1>
+            <div class="score-container">
+                <div class="score-box">SCORE<span id="score">0</span></div>
+                <div class="score-box">BEST<span id="best">0</span></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn undo-btn" id="undo-btn">Undo</button>
+            <button class="btn restart-btn" id="reset-btn">New Game</button>
+        </div>
+
+        <div id="game-wrapper">
+            <div id="game-board"></div>
+            <div id="game-over" class="hidden">
+                <div class="over-content">
+                    <p>Game Over!</p>
+                    <button class="btn" id="retry-btn">Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

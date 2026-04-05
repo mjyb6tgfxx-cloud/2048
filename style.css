@@ -1,0 +1,105 @@
+:root {
+    --bg-color: #faf8ef;
+    --board-bg: #bbada0;
+    --tile-empty: rgba(238, 228, 218, 0.35);
+    --text-dark: #776e65;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Clear Sans', Arial, sans-serif;
+    overflow: hidden;
+    touch-action: none;
+}
+
+.game-container {
+    width: 320px;
+    position: relative;
+}
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.title { font-size: 38px; color: var(--text-dark); margin: 0; font-weight: bold; }
+
+.score-container { display: flex; gap: 6px; }
+.score-box {
+    background: var(--board-bg);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 10px;
+    text-align: center;
+    min-width: 65px;
+}
+#score, #best { font-size: 18px; display: block; font-weight: bold; }
+
+.controls { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.btn {
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    flex: 1;
+    margin: 0 4px;
+    background: #8f7a66;
+}
+.undo-btn { background: #d35400; }
+
+#game-wrapper { position: relative; width: 320px; height: 320px; }
+
+#game-board {
+    width: 100%;
+    height: 100%;
+    background: var(--board-bg);
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+    background: var(--tile-empty);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* 숫자별 색상 고정 */
+.tile-2 { background: #eee4da; }
+.tile-4 { background: #ede0c8; }
+.tile-8 { background: #f2b179; color: #f9f6f2; }
+.tile-16 { background: #f59563; color: #f9f6f2; }
+.tile-32 { background: #f67c5f; color: #f9f6f2; }
+.tile-64 { background: #f65e3b; color: #f9f6f2; }
+.tile-128 { background: #edcf72; color: #f9f6f2; font-size: 20px; }
+
+#game-over {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(238, 228, 218, 0.85);
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 6px; z-index: 100;
+}
+.over-content { text-align: center; color: var(--text-dark); font-size: 32px; font-weight: bold; }
+.hidden { display: none !important; }
